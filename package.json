@@ -1,0 +1,36 @@
+{
+  "name": "nextjs-typescript-sandbox",
+  "version": "1.0.0",
+  "description": "nextjs-typescript-sandbox",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takefumi-yoshii/nextjs-typescript-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takefumi-yoshii/nextjs-typescript-sandbox/issues"
+  },
+  "homepage": "https://github.com/takefumi-yoshii/nextjs-typescript-sandbox#readme",
+  "dependencies": {
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
+    "styled-reset": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.20",
+    "@types/react": "^16.9.16",
+    "babel-plugin-styled-components": "^1.10.6",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.3"
+  }
+}
