@@ -10,6 +10,7 @@ type T = {
 //
 const Component: React.FC<T> = props => (
   <div className={props.className}>
+    <h1>Top</h1>
     <Link href={"/detail"}>
       <a>go to detail</a>
     </Link>
@@ -18,7 +19,10 @@ const Component: React.FC<T> = props => (
 // ______________________________________________________
 //
 const StyledComponent = styled(Component)`
-  background-color: #cfc;
+  padding: 60px;
+  > h1 {
+    margin-bottom: 20px;
+  }
 `
 // ______________________________________________________
 //
