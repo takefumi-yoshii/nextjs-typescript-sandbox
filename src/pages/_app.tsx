@@ -1,21 +1,30 @@
 import React from "react"
+import { AppPageProps, PageProps } from "next"
+import App, { AppContext } from "next/app"
 import Head from "next/head"
-import App, { AppContext, AppProps } from "next/app"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyle, theme } from "../styles"
 // ______________________________________________________
 //
-const AppComponent = ({ Component, pageProps }: AppProps) => (
+const AppComponent = ({ Component, pageProps }: AppPageProps) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <Head>{pageProps.title && <title>{pageProps.title}</title>}</Head>
+    <Head>
+      <title>{pageProps.title}</title>
+    </Head>
     <Component {...pageProps} />
   </ThemeProvider>
 )
 // ______________________________________________________
 //
 AppComponent.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext)
+  const appProps: { pageProps: PageProps } = await App.getInitialProps(
+    appContext
+  )
+  // 全ページで制約されているため、安全な値として扱える
+  // これらのメタデータをもって、ロギングなどの middleware非同期処理を挟める。
+  const { title } = appProps.pageProps
+  console.log(title)
   return { ...appProps }
 }
 // ______________________________________________________
