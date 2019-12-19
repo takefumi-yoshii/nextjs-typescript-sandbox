@@ -6,8 +6,8 @@ import Component from "../../components/detail"
 const PageComponent: PageFC = () => <Component />
 // ______________________________________________________
 //
-PageComponent.getInitialProps = async ({ req }) => {
-  return { title: "Detail" }
+PageComponent.getInitialProps = async () => {
+  return { title: "Detail", logData: { screenName: "Detail" } }
 }
 // ______________________________________________________
 //

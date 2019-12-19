@@ -14,7 +14,11 @@ const ErrorComponent: PageFC<ErrorProps> = ({ statusCode }) => (
 //
 ErrorComponent.getInitialProps = async ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-  return { statusCode, title: `Error | ${statusCode}` }
+  return {
+    statusCode,
+    title: `Error | ${statusCode}`,
+    logData: { screenName: "Error" }
+  }
 }
 // ______________________________________________________
 //

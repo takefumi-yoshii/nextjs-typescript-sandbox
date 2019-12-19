@@ -6,8 +6,11 @@ import Component from "../components/index"
 const PageComponent: PageFC = () => <Component />
 // ______________________________________________________
 //
-PageComponent.getInitialProps = async ({ req }) => {
-  return { title: "TOP" }
+PageComponent.getInitialProps = async () => {
+  return {
+    title: "TOP",
+    logData: { screenName: "TOP" }
+  }
 }
 // ______________________________________________________
 //

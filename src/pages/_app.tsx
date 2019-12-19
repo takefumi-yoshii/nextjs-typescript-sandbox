@@ -23,8 +23,9 @@ AppComponent.getInitialProps = async (appContext: AppContext) => {
   )
   // 全ページで制約されているため、安全な値として扱える
   // これらのメタデータをもって、ロギングなどの middleware非同期処理を挟める。
-  const { title } = appProps.pageProps
-  console.log(title)
+  const { screenName } = appProps.pageProps.logData
+  // 実際はロギングAPIなどをここで叩く
+  console.log(screenName)
   return { ...appProps }
 }
 // ______________________________________________________
